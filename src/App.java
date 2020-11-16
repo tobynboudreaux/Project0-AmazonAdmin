@@ -5,16 +5,19 @@ public class App {
     public static void main(String[] args) {
         java.lang.System.out.println("Welcome to Amazon Admin!");
 
-        if (admin == false)  {
-            java.lang.System.out.println("Yeet");
-            System.systemStart();
-        } else {
-            AdminMenu adminMenu = new AdminMenu("Toby", "1234");
-            adminMenu.validateUsername();
-        }
+        adminLoop();
     }
 
     public static void changeAdmin(boolean input) {
         admin = input;
+    }
+
+    public static void adminLoop() {
+        if (admin == false)  {
+            System.systemStart();
+        } else if (admin == true) {
+            AdminMenu adminMenu = new AdminMenu("Toby", "1234");
+            adminMenu.validateUsername();
+        }
     }
 }

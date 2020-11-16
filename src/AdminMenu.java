@@ -17,8 +17,13 @@ public class AdminMenu {
         if (input.equals(this.username)) {
             java.lang.System.out.println("Success");
             validatePassword();
+        } else if (input.equals("Quit")) {
+            App app = new App();
+            app.changeAdmin(false);
+            app.adminLoop();
         } else {
             java.lang.System.out.println("Invalid Credentials");
+            validateUsername();
         }
     }
 
@@ -28,8 +33,13 @@ public class AdminMenu {
         if (input.equals(this.password)) {
             java.lang.System.out.println("Success");
             adminStart();
+        } else if (input.equals("Quit")) {
+            App app = new App();
+            app.changeAdmin(false);
+            app.adminLoop();
         } else {
             java.lang.System.out.println("Invalid Credentials");
+            validatePassword();
         }
     }
 
@@ -46,6 +56,9 @@ public class AdminMenu {
             java.lang.System.out.println("Options");
         } else if (input.equals("Quit")) {
             java.lang.System.out.println("Goodbye");
+            App app = new App();
+            app.changeAdmin(false);
+            app.adminLoop();
         } else {
             java.lang.System.out.println("Input not accepted.");
             try {
